@@ -335,9 +335,9 @@
         switch (v.type) {
             case "carrot": {
                 ctx.rotate(v.angle || 0);
-                const topW = r * 1.0; // width at shoulders
-                const tipY = r * 1.25; // pointed bottom
-                const topY = -r * 1.0; // top
+                const topW = r * 1.0;      // width at shoulders
+                const tipY = r * 1.25;     // pointed bottom
+                const topY = -r * 1.0;     // top
 
                 // Body: symmetric, conical with a sharp tip
                 const g = ctx.createLinearGradient(0, topY, 0, tipY);
@@ -347,18 +347,8 @@
                 ctx.fillStyle = g;
                 ctx.beginPath();
                 ctx.moveTo(-topW * 0.5, topY);
-                ctx.quadraticCurveTo(
-                    -topW * 0.7,
-                    (topY + tipY) * 0.45,
-                    0,
-                    tipY
-                );
-                ctx.quadraticCurveTo(
-                    topW * 0.7,
-                    (topY + tipY) * 0.45,
-                    topW * 0.5,
-                    topY
-                );
+                ctx.quadraticCurveTo(-topW * 0.7, (topY + tipY) * 0.45, 0, tipY);
+                ctx.quadraticCurveTo(topW * 0.7, (topY + tipY) * 0.45, topW * 0.5, topY);
                 ctx.quadraticCurveTo(0, topY - r * 0.22, -topW * 0.5, topY);
                 ctx.closePath();
                 ctx.fill();
@@ -366,15 +356,7 @@
                 // Center highlight
                 ctx.fillStyle = "rgba(255,255,255,0.16)";
                 ctx.beginPath();
-                ctx.ellipse(
-                    -topW * 0.08,
-                    (topY + tipY) * 0.05,
-                    topW * 0.1,
-                    r * 0.55,
-                    -Math.PI / 10,
-                    0,
-                    Math.PI * 2
-                );
+                ctx.ellipse(-topW * 0.08, (topY + tipY) * 0.05, topW * 0.1, r * 0.55, -Math.PI / 10, 0, Math.PI * 2);
                 ctx.fill();
 
                 // Ridges
@@ -393,13 +375,7 @@
                 // Stem and greens centered
                 ctx.fillStyle = "#15803d";
                 ctx.beginPath();
-                ctx.roundRect(
-                    -topW * 0.08,
-                    topY - r * 0.08,
-                    topW * 0.16,
-                    r * 0.18,
-                    r * 0.05
-                );
+                ctx.roundRect(-topW * 0.08, topY - r * 0.08, topW * 0.16, r * 0.18, r * 0.05);
                 ctx.fill();
 
                 ctx.fillStyle = "#22c55e";
@@ -408,15 +384,7 @@
                     ctx.translate(0, topY - r * 0.1);
                     ctx.rotate(i * (Math.PI / 12));
                     ctx.beginPath();
-                    ctx.ellipse(
-                        0,
-                        -r * 0.28,
-                        r * 0.2,
-                        r * 0.6,
-                        0,
-                        0,
-                        Math.PI * 2
-                    );
+                    ctx.ellipse(0, -r * 0.28, r * 0.2, r * 0.6, 0, 0, Math.PI * 2);
                     ctx.fill();
                     ctx.restore();
                 }
