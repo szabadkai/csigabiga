@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snail Munch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="hud">
+      <div id="score">Score: <span>0</span></div>
+      <div id="timer">60</div>
+    </div>
+
+    <canvas id="game" width="800" height="600"></canvas>
+
+    <div id="overlay" class="show">
+      <div class="card">
+        <h1>Snail Munch</h1>
+        <p>Eat as many veggies as you can before time runs out.</p>
+        <ul>
+          <li>Move with WASD or Arrow Keys</li>
+          <li>On mobile, use the joystick</li>
+        </ul>
+        <button id="startBtn">Start</button>
+      </div>
+    </div>
+
+    <div id="joystick" aria-hidden="true">
+      <div id="stick"></div>
+    </div>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
+
+
